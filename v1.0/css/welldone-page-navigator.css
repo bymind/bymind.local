@@ -1,0 +1,731 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/bg-navigator.jpg) left top repeat;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/bg-navigator.jpg) left top repeat;
+}
+
+.content-wrapper .title{
+	color:#303030;
+	font-size:40px;
+}
+
+.content-wrapper .title span {
+	width:100%;
+	text-align: center;
+	color:#303030;
+	font-size: 20px !important;
+	margin-top: -10px;
+	margin-bottom: 5px;
+}
+
+.design-icon{
+	background: url(/images/well-done-icons.png) 1px 1px no-repeat #ce5350;
+	height: 30px;
+	width: 30px;
+	position: relative;
+	margin: 0 auto;
+	border-radius: 4px;
+	margin-bottom: 30px;
+}
+
+div.task, div.done{
+	font-family: 'seg-l';
+	font-size: 20px;
+	color: rgba(48,48,48,.5);
+	max-width: 950px;
+	position: relative;
+	margin: 0 auto;
+	margin-top:10px;
+	padding:0 10px;
+	box-sizing:border-box;
+}
+
+div.task>span, div.done>span{
+	color: rgba(48,48,48,.7);
+	position: relative;
+	float: left;
+}
+
+div.notice{
+	font-family: 'seg-l';
+	font-size: 20px;
+	color:rgba(48,48,48,1);
+	position: relative;
+	margin-top:10px;
+	padding:0 10px;
+}
+
+div.top-text{
+	min-height: 500px;
+	width: 100%;
+	position: relative;
+	text-align: center;
+	background: url(/images/bg-navigator-top-text.jpg) left top repeat ;
+	margin-top: -100px;
+	padding-top: 100px;
+	padding-bottom:20px;
+	box-sizing: border-box;
+	
+}
+
+div.top-text-teeth{
+	width: 100%;
+	height: 10px;
+	position: relative;
+	background: url(/images/teeth.png) left top repeat-x #e0e0e0;
+}
+
+div.home-page{
+	position: relative;
+	width: 100%;
+	margin-top: -100px;
+}
+
+div.home-page>div.title{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-family: 'neuch-bt';
+	font-size: 30px;
+	margin-top: 130px;
+	color: rgba(48,48,48,.7);
+	text-transform: uppercase;
+}
+
+div.invisible{
+	opacity:0;
+}
+
+div.home-page>div.screen1{
+	position: relative;
+	display: block;
+	width: 690px;
+	height: 484px;
+	background: url(../../Well-Done/navigator/images/home-page.png) center center no-repeat;
+	background-size: contain;
+	margin: 50px auto 20px auto;
+	border: 3px solid rgba(0,0,0,.3);
+}
+
+div.screen1.visible{
+	transition: opacity .5s ease-in-out;
+	opacity: 1 !important;
+}
+
+div.screen1-to-full{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .3);
+	cursor: pointer;
+	display: none;
+}
+div.screen1-to-full>div.round{
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 200px;
+	background: url(/images/zoom.png) center center no-repeat rgba(99, 188, 184, .7);
+	background-size: 20%;
+	cursor: pointer;
+	border-radius: 50%;
+	margin: auto auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	box-shadow: 0 0 100px rgba(0,0,0,.3);
+}
+
+div.screen1>div.notice1{
+	position: absolute;
+	display: block;
+	background: url(/Well-Done/navigator/images/navigator-notice1.png) center center no-repeat;
+	background-size: contain;
+	width: 267px;
+	height: 112px;
+	left: -225px;
+	top: -38px;
+	opacity: 0;
+}
+
+div.screen1>div.notice2{
+	position: absolute;
+	display: block;
+	background: url(/Well-Done/navigator/images/navigator-notice2.png) center center no-repeat;
+	background-size: contain;
+	width: 261px;
+	height: 100px;
+	right: -225px;
+	top: 110px;
+	opacity: 0;
+}
+
+div.screen1>div.notice3{
+	position: absolute;
+	display: block;
+	background: url(/Well-Done/navigator/images/navigator-notice3.png) center center no-repeat;
+	background-size: contain;
+	width: 250px;
+	height: 45px;
+	left: 300px;
+	top: 57%;
+	opacity: 0;
+}
+
+div.legend{
+	position: relative;
+	display: block;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.legend>div{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	height: 33px;
+	width: 150px;
+	background: rgba(0,0,0,.6);
+	margin-right:50px;
+	margin-bottom: 20px;
+}
+
+div.all{
+	width: 90px;
+	margin-left: 50px;
+	margin-right: 0 !important;
+}
+
+.all .text{
+	width:50px !important;
+}
+
+.legend>div:nth-child(3){
+	margin-right:0 !important;
+}
+
+.legend .icon{
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 30px;
+	left: 10px;
+	top:-5px;
+	border-radius: 5px;
+	background: white;
+}
+
+.design .icon{
+	background: url(/images/well-done-icons.png) 1px 1px no-repeat #ce5350;
+}
+
+.dev .icon{
+	background: url(/images/well-done-icons.png) -29px -1px no-repeat #dfc484;
+}
+
+.inweb .icon{
+	background: url(/images/well-done-icons.png) -60px -1px no-repeat #488d75;
+}
+
+.all .icon{
+	background: url(/images/well-done-all.png) center center no-repeat white;
+}
+
+.legend .text{
+	opacity: .4;
+	position: relative;
+	float: right;
+	width: 110px;
+	height: 33px;
+	color:rgba(255,255,255,1);
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size:18px;
+	text-align: center;
+	transition: opacity .2s ease-in-out;
+}
+
+.legend>div:hover .text{
+	opacity: 1;
+}
+
+.legend>div.selected .text{
+	opacity:1;
+	text-decoration: underline;
+}
+
+
+div.projects{
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-top:0px;
+	padding-top: 0px;
+	float: left;
+}
+
+.projects>.item{
+	position: relative;
+	width: 310px;
+	height: 250px;
+	background: rgba(0,0,0,.4);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+	transition:background .1s ease-in-out;
+	//display: none;
+	float: left;
+	margin-left: 10px;
+	margin-bottom:20px;
+}
+
+.projects>.item:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+}
+
+
+.projects>.item>.title{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 25px;
+	text-transform: none;
+	margin-top:10px;
+	text-align: left;
+	z-index: 1;
+}
+
+.projects>.item>.undertitle{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 20px;
+	text-transform: none;
+	line-height: 20px;
+	margin-top:0px;
+	text-align: left;
+	color:white;
+	z-index: 1;
+}
+
+.projects>.item>.desc{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform: none;
+	margin-top:10px;
+	margin-left:40px;
+	padding-right:10px;
+	text-align: left;
+	color:white;
+	z-index: 1;
+}
+
+.projects>.item>.desc span.bull{
+	font-size: 18px;
+}
+
+.item>.points{
+	position: relative;
+	float: left;
+	height: 0;
+	margin-top: -25px;
+	z-index: 1;
+}
+
+.points>div{
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	background: white;
+	margin-right:10px;
+}
+
+
+
+.points>.dev-icon{
+	background: url(/images/well-done-icons.png) -29px -1px no-repeat #dfc484;
+}
+
+.points>.inweb-icon{
+	background: url(/images/well-done-icons.png) -60px -1px no-repeat #488d75;
+}
+
+.item>.navigator{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: url(/images/navigator.png) bottom right no-repeat;
+	top: 0;
+	left: 0;
+}
+
+.item>a.ajax{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+.item.showed{
+	//display: block;
+}
+
+@media screen and (max-width: 1230px){
+	div.screen1>div.notice1{
+		width: 200px;
+		height: 84px;
+		left: -155px;
+		top: -25px;
+}
+	div.screen1>div.notice2{
+		width: 200px;
+		height: 80px;
+		right: -170px;
+		top: 110px;
+}
+}
+
+@media screen and (max-width: 1100px){
+	div.screen1>div.notice1{
+		width: 180px;
+		height: 80px;
+		left: -125px;
+		top: -45px;
+}
+
+	div.screen1>div.notice2 {
+		width: 200px;
+		height: 80px;
+		right: -140px;
+		top: 70px;
+}
+}
+
+
+
+@media screen and (max-width: 1020px){
+	div.screen1{
+		width:610px !important;
+		height:428px !important;
+	}
+}
+
+
+@media screen and (max-width: 950px){
+	div.screen1>div.notices{
+		display:none;
+}
+}
+
+
+@media screen and (max-width: 890px){
+	.legend>div{
+		margin-right:20px;
+	}
+	div.all{
+		margin-left:20px;
+	}
+	div.screen1{
+		width:510px !important;
+		height:358px !important;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.legend>div{
+		margin-right:15px;
+	}
+	div.all{
+		margin-left:15px;
+	}
+
+	div.task, div.done, div.notice{
+		font-size: 15px;
+	}
+
+	div.screen1{
+		width: 450px !important;
+		height: 316px !important;
+	}
+}
+
+@media screen and (min-width: 780px){
+
+.content-wrapper .title span {
+	font-size: .5em;
+}
+
+}
+
+@media screen and (max-width:780px){
+
+.projects>.item{
+margin-left:10px;
+}
+
+	.legend>div{
+	margin-right:0px;
+	margin-left:20px;
+	margin-bottom:12px;
+	width:110px;
+	height:25px;
+}
+
+.legend .icon{
+	left:0px;
+	top:-2px;
+}
+
+.legend>div:after{
+	content: "";
+	position: relative;
+	display: block;
+	border-radius: 7px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgba(255,255,255,0.5);
+	top: -2px;
+	left: -2px;
+	opacity:0;
+	transition: opacity .2s ease-in-out;
+	}
+
+.legend>div:hover:after{
+	opacity:1;
+}
+
+.legend>div.selected:after{
+	opacity: 1;
+}
+
+	.legend .text{
+		opacity:1;
+		color:white;
+		font-size: 13px;
+		width:80px;
+		height: 25px;
+	}
+
+	.design .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.design{
+		background: #ce5350 !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	
+
+	.icon{
+		top: 0 !important;
+	}
+
+	.dev .text{
+		width: 70px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.dev{
+		background: #dfc484 !important;
+		width: 100px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.inweb .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.inweb{
+		background: #488d75 !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.all .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.all{
+		background: rgba(255,255,255,0.2) !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.all .icon{
+		background-color: transparent;
+	}
+
+	div.screen1{
+		width: 350px !important;
+		height: 246px !important;
+	}
+
+	div.screen1-to-full{
+		display: block;
+	}
+
+}
+
+
+@media screen and (max-width: 600px){
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/bg-navigator.jpg) left top repeat;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/bg-navigator.jpg) left top repeat;
+}
+
+div.task, div.done, div.notice{
+	font-size: 14px;
+}
+
+}
+
+@media screen and (max-width:460px){
+div.screen1{
+		width: 250px !important;
+		height: 176px !important;
+	}
+
+div.round{
+	width: 100px !important;
+	height: 100px !important;
+}
+}
+
+@media screen and (max-width:430px){
+
+.projects>.item{
+	position: relative;
+	width: 90%;
+	height: 200px;
+	background: rgba(0,0,0,.5);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+}
+
+.item>.navigator{
+	z-index: -1;
+}
+
+.projects>.item>.desc{
+	font-size: 15px;
+}
+
+
+}
+
+@media screen and (max-width: 410px){
+	.content-wrapper .title{
+		margin-top:90px;
+		font-size: 1.4em;
+	}
+	.content-wrapper .title span{
+		margin-top:0;
+	}
+}
+
+@media screen and (max-width: 400px){
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/bg-navigator.jpg) left top repeat;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/bg-navigator.jpg) left top repeat;
+}
+	.content-wrapper .title{
+		font-size: 1.1em;
+	}
+
+
+}
+
+.blocks{
+	background:transparent;
+}
+
+@media screen and (max-width: 320px){
+	.content-wrapper .title{
+		margin-top:90px;
+	}
+	.content-wrapper .title span{
+		margin-top:0;
+	}
+
+	.legend>div{
+		margin-left:12px !important;
+	}
+
+	.projects>.item{
+	position: relative;
+	width: 90%;
+	height: 170px;
+	background: rgba(0,0,0,.6);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+}
+}

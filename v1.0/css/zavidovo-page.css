@@ -1,0 +1,606 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/zavidovo.jpg) center center no-repeat fixed;
+	background-size: cover;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/zavidovo.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+
+.content-wrapper .title{
+	margin-top:110px;
+}
+
+.content-wrapper .title span {
+	width:90%;
+	text-align: right;
+	font-size: .3em;
+}
+
+div.legend{
+	position: relative;
+	display: block;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.legend>div{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	height: 33px;
+	width: 150px;
+	background: rgba(0,0,0,.6);
+	margin-right:50px;
+	margin-bottom: 20px;
+}
+
+div.all{
+	width: 90px;
+	margin-left: 50px;
+	margin-right: 0 !important;
+}
+
+.all .text{
+	width:50px !important;
+}
+
+.legend>div:nth-child(3){
+	margin-right:0 !important;
+}
+
+.legend .icon{
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 30px;
+	left: 10px;
+	top:-5px;
+	border-radius: 5px;
+	background: white;
+}
+
+.design .icon{
+	background: url(/images/well-done-icons.png) 1px 1px no-repeat #ce5350;
+}
+
+.dev .icon{
+	background: url(/images/well-done-icons.png) -29px -1px no-repeat #dfc484;
+}
+
+.inweb .icon{
+	background: url(/images/well-done-icons.png) -60px -1px no-repeat #488d75;
+}
+
+.all .icon{
+	background: url(/images/well-done-all.png) center center no-repeat white;
+}
+
+.legend .text{
+	opacity: .4;
+	position: relative;
+	float: right;
+	width: 110px;
+	height: 33px;
+	color:rgba(255,255,255,1);
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size:18px;
+	text-align: center;
+	transition: opacity .2s ease-in-out;
+}
+
+.legend>div:hover .text{
+	opacity: 1;
+}
+
+.legend>div.selected .text{
+	opacity:1;
+	text-decoration: underline;
+}
+
+
+div.projects{
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-top:0px;
+	padding-top: 0px;
+	float: left;
+}
+
+.projects>.item{
+	position: relative;
+	width: 310px;
+	height: 250px;
+	background: rgba(0,0,0,.4);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+	transition:background .1s ease-in-out;
+	//display: none;
+	float: left;
+	margin-left: 10px;
+	margin-bottom:20px;
+}
+
+.projects>.item:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+}
+
+
+.projects>.item>.title{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 25px;
+	text-transform: none;
+	margin-top:10px;
+	text-align: left;
+	z-index: 1;
+}
+
+.projects>.item>.undertitle{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 20px;
+	text-transform: none;
+	line-height: 20px;
+	margin-top:0px;
+	text-align: left;
+	color:white;
+	z-index: 1;
+}
+
+.projects>.item>.desc{
+	position: relative;
+	display: block;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform: none;
+	margin-top:10px;
+	margin-left:40px;
+	padding-right:10px;
+	text-align: left;
+	color:white;
+	z-index: 1;
+}
+
+.projects>.item>.desc span.bull{
+	font-size: 18px;
+}
+
+.item>.points{
+	position: relative;
+	float: left;
+	height: 0;
+	margin-top: -25px;
+	z-index: 1;
+}
+
+.points>div{
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	background: white;
+	margin-right:10px;
+}
+
+.points>.design-icon{
+	background: url(/images/well-done-icons.png) 1px 1px no-repeat #ce5350;
+}
+
+.points>.dev-icon{
+	background: url(/images/well-done-icons.png) -29px -1px no-repeat #dfc484;
+}
+
+.points>.inweb-icon{
+	background: url(/images/well-done-icons.png) -60px -1px no-repeat #488d75;
+}
+
+.item>.navigator{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: url(/images/navigator.png) bottom right no-repeat;
+	top: 0;
+	left: 0;
+}
+
+.item.showed{
+	//display: block;
+}
+
+div.left-half{
+	position: relative;
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+div.right-half{
+	position: relative;
+	display: block;
+	float: right;
+	width: 50%;
+	background: transparent;
+	min-height:200px;
+	margin-bottom: 30px;
+}
+
+span.waiting{
+display: block;
+position: relative;
+margin: 50px auto;
+padding: 0px;
+border-bottom: 3px solid white;
+max-width: 620px;
+width: 100%;
+background: rgba(0,0,0,.6);
+height: 350px;
+line-height: 30px;
+animation: waitingBlink 2s ease-in-out infinite;
+-o-animation: waitingBlink 2s ease-in-out infinite;
+-webkit-animation: waitingBlink 2s ease-in-out infinite;
+-ms-animation: waitingBlink 2s ease-in-out infinite;
+-moz-animation: waitingBlink 2s ease-in-out infinite;
+}
+
+ span.timing, span.comm{
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	border:3px solid white;
+width: 280px;
+height: 40px;
+font-size: 25px;
+}
+
+span.timing:hover{
+	cursor:pointer;
+	background:rgba(255,255,255,.1);
+	color:rgba(255,255,255,.8);
+}
+
+div.timeblock{
+	border: 2px solid white;
+text-align: left;
+box-sizing: border-box;
+padding: 20px;
+font-size: 20px;
+}
+
+div.timeplan{
+	display: none;
+	background: rgba(0,0,0,.5);
+	margin-top: 10px;
+	margin-bottom:30px;
+}
+
+div#vk_comments{
+	position: relative;
+	margin: 0 auto;
+}
+
+@keyframes waitingBlink{	
+	from{		
+		color:rgba(255,255,255,1);	
+		}	
+	45%{		
+		color:rgba(255,255,255,0);
+		}
+	55%{		
+		color:rgba(255,255,255,0);
+		}	
+	to{		
+		color:rgba(255,255,255,1);	
+	}
+}
+
+@media screen and (max-width: 1030px){
+	.left-half, .right-half {
+		width: 100% !important;
+		float:none !important;
+	}
+
+	div#vk_comments{
+		margin-top:30px;
+	}
+}
+
+@media screen and (max-width: 890px){
+	.legend>div{
+		margin-right:20px;
+	}
+	div.all{
+		margin-left:20px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.legend>div{
+		margin-right:15px;
+	}
+	div.all{
+		margin-left:15px;
+	}
+}
+
+@media screen and (min-width: 780px){
+
+.content-wrapper .title span {
+	font-size: .3em;
+}
+
+}
+
+@media screen and (max-width:780px){
+
+.projects>.item{
+margin-left:10px;
+}
+
+	.legend>div{
+	margin-right:0px;
+	margin-left:20px;
+	margin-bottom:12px;
+	width:110px;
+	height:25px;
+}
+
+.legend .icon{
+	left:0px;
+	top:-2px;
+}
+
+.legend>div:after{
+	content: "";
+	position: relative;
+	display: block;
+	border-radius: 7px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgba(255,255,255,0.5);
+	top: -2px;
+	left: -2px;
+	opacity:0;
+	transition: opacity .2s ease-in-out;
+	}
+
+.legend>div:hover:after{
+	opacity:1;
+}
+
+.legend>div.selected:after{
+	opacity: 1;
+}
+
+	.legend .text{
+		opacity:1;
+		color:white;
+		font-size: 13px;
+		width:80px;
+		height: 25px;
+	}
+
+	.design .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.design{
+		background: #ce5350 !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	
+
+	.icon{
+		top: 0 !important;
+	}
+
+	.dev .text{
+		width: 70px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.dev{
+		background: #dfc484 !important;
+		width: 100px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.inweb .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.inweb{
+		background: #488d75 !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.all .text{
+		width: 50px;
+		height: 30px;
+		margin-top: 5px;
+		text-align: left;
+	}
+
+	.all{
+		background: rgba(255,255,255,0.2) !important;
+		width: 80px !important;
+		height: 30px !important;
+		border-radius: 5px;
+	}
+
+	.all .icon{
+		background-color: transparent;
+	}
+
+}
+
+
+@media screen and (max-width: 600px){
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/zavidovo.jpg) center center no-repeat fixed;
+	background-size: cover;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/zavidovo.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+	.content-wrapper .title span{
+		margin-top:0;
+		font-size:.4em;
+	}
+
+}
+
+
+@media screen and (max-width:430px){
+
+.projects>.item{
+	position: relative;
+	width: 90%;
+	height: 200px;
+	background: rgba(0,0,0,.5);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+}
+
+.item>.navigator{
+	z-index: -1;
+}
+
+.projects>.item>.desc{
+	font-size: 15px;
+}
+
+	.content-wrapper .title span{
+		margin-top:0;
+		font-size:.4em;
+	}
+
+
+}
+
+@media screen and (max-width: 410px){
+	.content-wrapper .title{
+		margin-top:90px;
+		font-size: 1.4em;
+	}
+	.content-wrapper .title span{
+		margin-top:0;
+		font-size:.4em;
+	}
+}
+
+@media screen and (max-width: 400px){
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/zavidovo.jpg) center center no-repeat fixed;
+	background-size: cover;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/zavidovo.jpg) center center no-repeat;
+	background-size: cover;
+}
+	.content-wrapper .title{
+		font-size: 1.1em;
+	}
+
+	.content-wrapper .title span{
+		margin-top:0;
+		font-size:.6em;
+	}
+
+}
+
+.blocks{
+	background:transparent;
+	color:white;
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	text-align: center;
+	font-size: 30px;
+}
+
+@media screen and (max-width: 320px){
+	.content-wrapper .title{
+		margin-top:90px;
+	}
+	.content-wrapper .title span{
+		margin-top:0;
+	}
+
+	.legend>div{
+		margin-left:12px !important;
+	}
+
+	.projects>.item{
+	position: relative;
+	width: 90%;
+	height: 170px;
+	background: rgba(0,0,0,.6);
+	box-sizing:border-box;
+	padding:20px 0 0 20px;
+	overflow: visible;
+}
+
+	.content-wrapper .title span{
+		margin-top:0;
+		font-size:.6em;
+	}
+}

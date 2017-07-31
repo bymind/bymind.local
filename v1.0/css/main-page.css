@@ -1,0 +1,35 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/bg-default-21.jpg) left top no-repeat fixed;
+	background-size: cover;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/bg-default-21.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(/images/bg-21.jpg) center center no-repeat;
+	z-index: 1;
+	top:0;
+	left:0;
+	margin:0 auto;
+	background-size: cover;
+}
+
+.blocks{
+	background:transparent;
+}

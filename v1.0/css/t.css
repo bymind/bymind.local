@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'bm-menu-regular';
+    src: url('../t/bm-menu-regular.ttf')  format('truetype'), url('../t/bm-menu-regular.woff') format('woff'), url('../t/bm-menu-regular.eot?') format('eot'), 
+         
+         url('../t/bm-menu-regular.svg#bm-menu-regular') format('svg');
+    font-weight: normal;
+
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'bm-menu-black';
+    src: url('../t/bm-menu-black.ttf')  format('truetype'), url('../t/bm-menu-black.woff') format('woff'), url('../t/bm-menu-black.eot?') format('eot'), 
+         
+         url('../t/bm-menu-black.svg#bm-menu-black') format('svg');
+    font-weight: normal;
+
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'seg-l';
+    src: url('../t/segoeuil.ttf')  format('truetype'), url('../t/segoeuil.woff') format('woff'), url('../t/segoeuil.eot?') format('eot'), 
+         
+         url('../t/segoeuil.svg#seg-l') format('svg');
+    font-weight: normal;
+
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'seg-sl';
+    src: url('../t/segoeuisl.ttf')  format('truetype'), url('../t/segoeuisl.woff') format('woff'), url('../t/segoeuisl.eot?') format('eot'), 
+         
+         url('../t/segoeuisl.svg#seg-sl') format('svg');
+    font-weight: normal;
+
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'seg-li';
+    src: url('../t/seg-li.ttf')  format('truetype'), url('../t/seg-li.woff') format('woff'), url('../t/seg-li.eot?') format('eot'), 
+         
+         url('../t/seg-li.svg#seg-li') format('svg');
+    font-weight: normal;
+
+    font-style: normal;
+    }

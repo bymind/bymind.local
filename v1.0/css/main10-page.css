@@ -1,0 +1,14 @@
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: url(/images/bg-10.jpg) center bottom no-repeat;
+	z-index: 1;
+	top:0;
+	left:0;
+	margin:0 auto;
+	background-size: cover;
+}
+.blocks{
+	background:transparent;
+}

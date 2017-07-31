@@ -1,0 +1,601 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden; 
+	background: url(/images/bg-wedo.jpg) right top no-repeat fixed;
+	background-size: cover;
+	font-size:16px;
+}
+
+.coverer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background: url(/images/bg-wedo.jpg) right top no-repeat;
+	background-size: cover;
+}
+
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(/images/bg-wedo.jpg) right top no-repeat;
+	background-size: cover;
+	z-index: 1;
+	top:0;
+	left:0;
+	margin:0 auto;
+	opacity: 1;
+}
+
+#content-block{
+	height:100%;
+	min-height: 700px;
+}
+.content-wrapper > .title{
+	margin-top:130px ;
+}
+
+.content-wrapper .title span {
+margin-top:0px !important;
+width: 70%;
+text-align: right;
+font-size: .6em;
+}
+
+.blocks{
+	background:transparent;
+}
+
+#blocks-inner{
+	position: relative;
+	display: block;
+	max-width: 1024px;
+	height: 604px;
+	width: 100%;
+	padding: 0;
+	margin: auto;
+	background: transparent;
+}
+
+#blocks-inner .item-wedo{
+	position: relative;
+	display: block;
+	float: left;
+	height: 200px;
+	width: 33%;
+	background: rgba(0,0,0,.5);
+	padding: 20px;
+	box-sizing: border-box;
+	cursor:pointer;
+	transition:background .1s ease-in-out;
+}
+
+#blocks-inner .item-wedo:hover{
+	background:rgba(0,0,0,.7);
+}
+
+#blocks-inner .item-wedo:nth-child(3n+2){
+	margin:0 2px;
+}
+
+#blocks-inner .item-wedo:nth-child(4), #blocks-inner .item-wedo:nth-child(5), #blocks-inner .item-wedo:nth-child(6){
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+#blocks-inner .item-wedo:last-child{
+
+}
+
+h1.title-wedo{
+	font-family: 'seg-l', verdana, tahoma, sans-serif;
+	font-size: 38px;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	overflow: visible;
+}
+
+h1.uniq span{
+	position: relative;
+	display: block;
+	float: right;
+}
+
+h1.size2{
+	font-size: 2.2em;
+}
+
+h1.nothing{
+	font-size: 30px;
+}
+
+p.text-wedo{
+	margin: 0;
+	margin-top: 10px;
+	margin-left: 5px;
+	text-indent: 15px;
+	font-family: 'seg-l';
+	font-size: 18px;
+	line-height: 18px;
+	color: white;
+}
+
+p.uniq{
+	margin-top:45px;
+}
+
+p.nothing{
+	text-align: center;
+	font-size: 25px;
+	line-height: 25px;
+	text-indent: 0;
+	margin-top: 25px;
+}
+
+span.price-wedo{
+	display: block;
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+	font-family: 'seg-l';
+	font-size: 30px;
+	color: white;
+	line-height: 30px;
+	height: 30px;
+	overflow: visible;
+}
+
+@media screen and (max-width:1210px){
+h1.title-wedo{
+	font-size: 30px;
+}
+
+p.text-wedo {
+	margin-top: 10px;
+	font-size: 15px;
+	line-height: 14px;
+}
+
+h1.size2{
+	font-size:28px;
+}
+
+h1.nothing{
+	font-size: 24px;
+	text-align: center;
+}
+
+p.uniq{
+	margin-top:40px;
+}
+
+p.nothing{
+	font-size: 25px;
+	line-height: 25px;
+	margin-top: 25px;
+}
+}
+
+@media screen and (max-width: 1024px){
+#blocks-inner{
+	height: 514px;
+}
+
+#blocks-inner .item-wedo{
+	height: 170px;
+}
+
+h1.title-wedo{
+	font-size: 27px;
+	margin-top:-10px;
+}
+
+h1.nothing{
+	font-size: 23px;
+	margin-top:0;
+}
+
+p.text-wedo {
+	margin-top: 5px;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+p.uniq{
+	margin-top:35px;
+}
+
+p.nothing{
+	font-size: 25px;
+	line-height: 25px;
+	margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 1000px){
+#blocks-inner .item-wedo:hover{
+	background:rgba(0,0,0,.5);
+}
+
+
+h1.title-wedo {
+font-size: 20px;
+margin-top: -10px;
+}
+
+h1.nothing {
+font-size: 23px;
+margin-top: -10px;
+line-height: 20px;
+}
+
+h1.uniq span{
+	margin-top: -10px;
+	width: 120px;
+}
+
+h1.size2{
+	font-size: 19px;
+}
+
+p.text-wedo{
+	margin-top: 0px;
+	font-size: 13px;
+	line-height: 12px;
+}
+
+p.uniq{
+	margin-top:25px;
+}
+
+p.nothing {
+font-size: 20px;
+line-height: 20px;
+margin-top: 20px;
+}
+
+span.price-wedo {
+right: 10px;
+bottom: 5px;
+font-size: 25px;
+}
+}
+
+@media screen and (max-width: 780px){
+#blocks-inner{
+	height: 424px;
+	width: 90%;
+}
+
+#blocks-inner .item-wedo {
+height: 140px;
+padding: 20px 10px;
+}
+
+h1.title-wedo {
+font-size: 18px;
+margin-top: -20px;
+}
+
+h1.nothing {
+font-size: 20px;
+margin-top: -10px;
+line-height: 20px;
+}
+
+p.text-wedo {
+margin-top: 0px;
+font-size: 12px;
+line-height: 11px;
+}
+
+p.nothing {
+font-size: 16px;
+line-height: 15px;
+margin-top: 20px;
+}
+
+}
+
+@media screen and (max-width: 750px){
+.content-wrapper .title{
+	margin-top:110px !important;
+}
+
+#blocks-inner{
+	height: 508px;
+}
+
+#blocks-inner .item-wedo{
+	width:49.5%;
+	height: 100px;
+	margin-top:2px;
+	margin-left: 0;
+}
+#blocks-inner .item-wedo:nth-child(3n+2), #blocks-inner .item-wedo:nth-child(4), #blocks-inner .item-wedo:nth-child(5), #blocks-inner .item-wedo:nth-child(6){
+	margin:0;
+	margin-top:2px;
+}
+
+#blocks-inner .item-wedo:nth-child(2n){
+	margin-left:2px;
+}
+
+#blocks-inner .item-wedo:nth-child(1), #blocks-inner .item-wedo:nth-child(2){
+	margin-top: 0 !important;
+}
+#blocks-inner .item-wedo:last-child{
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	top: 408px;
+}
+
+h1.uniq span {
+margin-top: 0;
+float: none;
+display: inline;
+}
+
+h1.nothing {
+font-size: 30px;
+margin-top: -10px;
+line-height: 20px;
+position: absolute;
+}
+
+p.text-wedo {
+margin-top: -5px;
+}
+
+p.nothing {
+font-size: 25px;
+line-height: 20px;
+margin-top: 25px;
+position: absolute;
+text-align: right;
+margin-right: 20px;
+}
+
+span.price-wedo {
+right: 10px;
+bottom: 2px;
+font-size: 20px;
+}
+
+}
+
+@media screen and (max-width: 690px){
+h1.uniq{
+	font-size: 17px;
+}
+p.text-wedo{
+	text-indent: 0;
+}
+p.nothing {
+font-size: 20px;
+}
+span.price-wedo {
+right: 10px;
+bottom: 0px;
+font-size: 15px;
+height: 20px;
+line-height: 15px;
+}
+}
+
+@media screen and (max-width: 590px){
+#blocks-inner {
+height: 333px;
+}
+
+#blocks-inner .item-wedo{
+	height:65px;
+}
+
+#blocks-inner .item-wedo:last-child{
+	top:268px;
+}
+
+h1.nothing {
+font-size: 20px;
+margin-top: -15px;
+}
+
+h1.uniq span {
+margin-top: -15px;
+float: none;
+display: block;
+width: auto;
+}
+
+p.text-wedo{
+	display: none;
+}
+
+p.nothing {
+display: block !important;
+margin-top: 10px;
+font-size: 15px;
+line-height: 15px;
+}
+
+span.price-wedo {
+bottom: 5px;
+font-size: 20px;
+}
+}
+
+@media screen and (max-width: 480px){
+#blocks-inner{
+	height: 916px;
+}
+
+#blocks-inner .item-wedo{
+	width:100%;
+	height: 100px;
+	margin:0 0 2px 0 !important;
+}
+#blocks-inner .item-wedo:last-child{
+	width: 100%;
+	margin:0 !important;
+	float: left !important;
+	top:0;
+}
+
+h1.title-wedo {
+font-size: 25px;
+margin-top: -15px;
+}
+
+h1.uniq{
+	font-size:25px;
+}
+
+h1.uniq span{
+	display: inline;
+}
+
+p.text-wedo {
+	display: block;
+	font-size: 13px;
+	line-height: 12px;
+	margin-top: 0px;
+}
+
+p.nothing{
+font-size: 20px;
+line-height: 20px;
+margin-top: 15px;
+}
+}
+
+@media screen and (max-width: 450px){
+h1.title-wedo {
+font-size: 20px;
+margin-top: -20px;
+}
+
+h1.uniq {
+font-size: 20px;
+margin-top: -20px;
+}
+
+h1.nothing{
+font-size: 25px;
+margin-top: -15px;
+}
+
+p.text-wedo {
+display: block;
+font-size: 12px;
+line-height: 10px;
+margin-top: -3px;
+}
+
+p.nothing{
+font-size: 20px;
+line-height: 20px;
+margin-top: 15px;
+}
+}
+
+@media screen and (max-width: 420px){
+p.nothing{
+margin-top: 10px;
+}
+}
+
+@media screen and (max-width: 380px){
+#blocks-inner{
+	height: 646px;
+}
+
+#blocks-inner .item-wedo{
+	width:100%;
+	height: 70px;
+	margin:0 0 2px 0 !important;
+}
+#blocks-inner .item-wedo:last-child{
+	width: 100%;
+	margin:0 !important;
+	float: left !important;
+}
+
+h1.title-wedo {
+font-size: 30px;
+margin-top: -20px;
+}
+
+h1.uniq{
+	font-size:25px;
+}
+
+h1.uniq span {
+display: block;
+margin-top: -10px;
+}
+
+h1.nothing{
+	font-size:20px;
+}
+
+p.text-wedo {
+display: none;
+}
+
+p.nothing {
+display: block;
+font-size: 15px;
+line-height: 15px;
+}
+
+span.price-wedo {
+bottom: 7px;
+font-size: 20px;
+}
+}
+
+@media screen and (max-width: 360px){
+h1.title-wedo{
+	font-size:20px;
+}
+
+p.nothing {
+display: block;
+font-size: 14px;
+line-height: 13px;
+margin-top:7px;
+}
+
+span.price-wedo {
+bottom: 10px;
+font-size: 25px;
+}
+
+span.price-wedo.uniq {
+bottom: 7px;
+font-size: 20px;
+}
+}
+
+@media screen and (max-width:320px){
+	h1.nothing{
+		margin-top: -10px;
+	}
+
+	p.nothing {
+		margin-top: 15px;
+	}
+
+	span.price-wedo.uniq {
+		bottom: 10px;
+		font-size: 25px;
+	}
+}

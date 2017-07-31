@@ -1,0 +1,11 @@
+{
+	"name": "Студия ByMind",
+	"short_name": "ByMind",
+	"description": "Студия веб-разработки и дизайна ByMind",
+	"version": "0.2",
+	"api_version": 1,
+	"start_url": "/",
+	"display": "fullscreen",
+	"background_color": "#050404",
+	"theme_color": "#050404"
+}

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /core*
+Disallow: /*content.php
+Disallow: /*skype.php
+Disallow: /*adress.php
+Disallow: /*goSkype.php
+Disallow: /*goConnect2.php
+Host: bymind.ru
+Sitemap: http://bymind.ru/sitemap.xml

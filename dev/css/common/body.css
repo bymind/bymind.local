@@ -1,0 +1,15 @@
+html,
+body {
+	min-height: 100%;
+}
+/*
+* @todo make it cross-browser
+ */
+body {
+	background: gray;
+	transform: scale3d(1, 1, 1);
+}
+
+.row{
+	padding-bottom: 10px;
+}

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vertical Position</title>
+</head>
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	/*
+ * jQuery autoResize (textarea auto-resizer)
+ * @copyright James Padolsey http://james.padolsey.com
+ * @version 1.04
+ */
+
+(function($){
+    
+    $.fn.autoResize = function(options) {
+        
+        // Just some abstracted details,
+        // to make plugin users happy:
+        var settings = $.extend({
+            onResize : function(){
+				 
+			},
+            animate : true,
+            animateDuration : 150,
+            animateCallback : function(){},
+            extraSpace : 20,
+            limit: 1000
+        }, options);
+        
+        // Only textarea's auto-resize:
+        this.filter('textarea').each(function(){
+            
+                // Get rid of scrollbars and disable WebKit resizing:
+            var textarea = $(this).css({resize:'none','overflow-y':'hidden'}),
+            
+                // Cache original height, for use later:
+                origHeight = textarea.height(),
+				
+				                
+                // Need clone of textarea, hidden off screen:
+                clone = (function(){
+
+                    // Properties which may effect space taken up by chracters:
+                    var props = ['height','width','lineHeight','textDecoration','letterSpacing'],
+                        propOb = {};
+  
+                    // Create object of styles to apply:
+                    $.each(props, function(i, prop){
+                        propOb[prop] = textarea.css(prop);
+                    });
+                    
+                    // Clone the actual textarea removing unique properties
+                    // and insert before original textarea:
+                    return textarea.clone().removeAttr('id').removeAttr('name').css({
+                        position: 'absolute',
+                        top: 0,
+                        left: -9999
+                    }).css(propOb).attr('tabIndex','-1').insertBefore(textarea);
+					
+                })(),
+                lastScrollTop = null,
+                updateSize = function() {
+                    // Prepare the clone:
+                    clone.height(0).val($(this).val()).scrollTop(10000);
+					
+                    // Find the height of text:
+                    var scrollTop = Math.max(clone.scrollTop(), origHeight) + settings.extraSpace,
+                        toChange = $(this).add(clone);
+						
+                    // Don't do anything if scrollTip hasen't changed:
+                    if (lastScrollTop === scrollTop) { return; }
+                    lastScrollTop = scrollTop;
+					
+                    // Check for limit:
+                    if ( scrollTop >= settings.limit ) {
+                        $(this).css('overflow-y','');
+                        return;
+                    }
+                    // Fire off callback:
+                    settings.onResize.call(this);
+					
+                    // Either animate or directly apply height:
+                   settings.animate && textarea.css('display') === 'block' ?
+                        toChange.stop().animate({height:scrollTop}, settings.animateDuration, settings.animateCallback)
+                        : toChange.height(scrollTop);
+						
+					
+                };
+                                  
+            // Bind namespaced handlers to appropriate events:
+            textarea
+                .unbind('.dynSiz')
+                .bind('keyup.dynSiz', updateSize)
+                .bind('keydown.dynSiz', updateSize)
+                .bind('change.dynSiz', updateSize);
+            
+        });
+        
+        // Chain:
+        return this;
+        
+    };
+    
+    
+    
+})(jQuery);
+</script>
+<style>
+	#overlay{
+		position:relative;
+		width: 800px;
+		height: 400px;
+		border:3px solid green;
+		margin:20px 0 0 420px;
+		overflow: hidden;
+		background: #ccc;
+	}
+	#overlay .note{
+		width: 80px;
+		height: 20px;
+		color:white;
+		font-family: verdana, tahoma, sans-serif;
+		font-size:13px;
+		text-align: left;
+		line-height: 20px;
+		background:green;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	#positioned{
+		position: absolute;
+		width: 100%;
+		height: auto;
+		border: 3px solid orange;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		box-sizing: border-box;
+		margin: auto;
+		padding: 20px;
+		display: inline-table;
+		font-family: verdana, tahoma, sans-serif;
+		font-size:15px;
+		background: white;
+	}
+
+	#positioned .note{
+		width: 100px;
+		height: 20px;
+		color:white;
+		font-family: verdana, tahoma, sans-serif;
+		font-size:13px;
+		text-align: left;
+		line-height: 20px;
+		background:orange;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	textarea {
+		display: block;
+	   //min-height: 50px;
+	    font-family: verdana, tahoma, sans-serif;
+		font-size:15px;
+	    color: #333;
+	    position: relative;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+	
+	textarea:focus {
+		outline:none;
+	}
+
+	div.legend{
+		position: absolute;
+		width: 400px;
+		font-family: verdana, tahoma, sans-serif;
+		font-size:13px;
+		left: 0px;
+		top: 0px;
+		background:#272822;
+		padding:10px 20px;
+		box-sizing:border-box;
+		color:white;
+		z-index: 2;
+	}
+	
+	.green{
+		color:#7fe22e;
+	}
+
+	.blue{
+		color:#66d9ef;
+	}
+
+	.num{
+		color:#ae81ff;
+	}
+
+	.symb{
+		color:#d92672;
+	}
+
+	.tab{
+		width: 25px;
+		display: inline-block;
+	}
+	#css-is-awesome{
+		position: absolute;
+		top: 460px;
+		right: left;
+		width: 60px;
+		height: 50px;
+		background: url(/images/css-is-awesome.png) center center no-repeat white;
+		background-size: contain;
+		z-index: 1;
+	}
+
+	#disqus_thread{
+		position: relative;
+		top: 70px;
+		left: 420px;
+		width: 800px;
+		margin-bottom: 100px;
+	}
+</style>
+<body>
+<div class="legend">
+
+<span class="green">#overlay</span>	{<br>
+	<span class="tab"></span><span class="blue">position</span>: <span class="blue">relative</span>;<br>
+	<span class="tab"></span><span class="blue">width</span>: <span class="num">800</span><span class="symb">px</span>;<br>
+	<span class="tab"></span><span class="blue">height</span>: <span class="num">400</span><span class="symb">px</span>;<br>
+	<span class="tab"></span><span class="blue">border</span>: <span class="num">3</span><span class="symb">px</span> <span class="blue">solid green</span>;<br>
+	<span class="tab"></span><span class="blue">margin</span>: <span class="num">50</span><span class="symb">px</span> <span class="blue">auto</span>;<br>
+	<span class="tab"></span><span class="blue">overflow</span>: <span class="blue">hidden</span>;<br>
+	<span class="tab"></span><span class="blue">background</span>: <span class="num">#ccc</span>;<br>
+}<br>
+<br>
+<span class="green">#positioned</span>	{<br>
+	<span class="tab"></span><span class="blue">position</span>: <span class="blue">absolute</span>;<br>
+	<span class="tab"></span><span class="blue">width</span>: <span class="num">100</span><span class="symb">%</span>;<br>
+	<span class="tab"></span><span class="blue">height</span>: <span class="blue">auto</span>;<br>
+	<span class="tab"></span><span class="blue">border</span>: <span class="num">3</span><span class="symb">px</span> <span class="blue">solid orange</span>;<br>
+	<span class="tab"></span><span class="blue">left</span>: <span class="num">0</span>;<br>
+	<span class="tab"></span><span class="blue">right</span>: <span class="num">0</span>;<br>
+	<span class="tab"></span><span class="blue">bottom</span>: <span class="num">0</span>;<br>
+	<span class="tab"></span><span class="blue">top</span>: <span class="num">0</span>;<br>
+	<span class="tab"></span><span class="blue">box-sizing</span>: <span class="blue">border-box</span>;<br>
+	<span class="tab"></span><span class="blue">margin</span>: <span class="blue">auto</span>;<br>
+	<span class="tab"></span><span class="blue">padding</span>: <span class="num">20</span><span class="symb">px</span>;<br>
+	<span class="tab"></span><span class="blue">display</span>: <span class="blue">inline-table</span>;<br>
+	<span class="tab"></span><span class="blue">font-family</span>: <span class="blue">verdana</span>, <span class="blue">tahoma</span>, <span class="blue">sans-serif</span>;<br>
+	<span class="tab"></span><span class="blue">font-size</span>: <span class="num">15</span><span class="symb">px</span>;<br>
+	<span class="tab"></span><span class="blue">background</span>: <span class="blue">white</span>;<br>
+}<br>
+</div>
+	<div id="overlay">
+		<div class="note">div#overlay</div>
+		<div id="positioned">
+			<div class="note">div#positioned</div>
+			<textarea name="" id="" >Cюда можно писать, а желтый блок все равно будет вертикально отцентрирован</textarea>
+		</div>
+	</div>
+
+<div id="css-is-awesome"></div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'verticalpos'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+<script type="text/javascript">
+	jQuery(function()
+	{
+		jQuery('textarea').autoResize();
+	});
+</script>
+
+</body>
+</html>
